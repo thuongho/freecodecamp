@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html lang="en" ng-app="Stories">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <title>Stylize Stories on Camper News</title>
+
+  <!-- load bootstrap css -->
+   <link rel="stylesheet" href="css/bootstrap.min.css"> 
+   <link rel="stylesheet" href="css/bootstrap-responsive.min.css" type="text/css" />
+   
+  <!-- css -->
+  <link rel="stylesheet" href="css/style.css" type="text/css" />
+  
+  <!-- load jquery -->
+  <script src="js/jquery.min.js"></script>
+
+  <!-- load angular -->
+  <script src="js/angular.min.js"></script>
+
+ 
+</head>
+<body>
+
+  <!-- nav bar -->
+  <!-- end of nav bar -->
+
+  <div class="container" ng-controller="PostsCtrl">
+     
+    <!--<div ng-view></div>-->
+    
+    <!-- display posts -->
+    <div class="row" >
+      <div class="col-xs-6 col-md-3 col-lg-2 thumbnail" ng-repeat="post in posts">
+        <a href="{{post.link}}">
+          <img class="thumbnail img-responsive img-thumbnail" src="{{post.author.picture}}" alt="Author Picture"/></a>
+          <h4><a href="{{post.link}}" >{{post.headline}} - {{post.author.username}}</a></h4>
+            <a href="#" class="btn btn-primary" alt="link">read more</a>
+        <div><span>upVotes:</span><span class="glyphicon glyphicon-search"></span><span>{{post.upVotes.length}}</span></div>
+      <div><span class="glyphicon glyphicon-search"></span></div>
+      </div>
+      <div></div>
+    </div>
+    
+  </div>
+
+  <!-- custom script -->
+  <script src="js/main.js"></script>
+  
+</body>
+</html>
