@@ -15,10 +15,11 @@
 <body>
   <h1>Random Quote Machine</h1>
   <div id="quote"></div>
-  <button class="btn btn-success">New Quote</button>
-
-  <h3></h3>
-  
+  <button class="btn btn-success" id="quoteButton">New Quote</button> 
+  <button class="btn btn-primary tweet" id="tweetButton">Tweet</button>
+  <a class="twitter-share-button"
+  href="https://twitter.com/intent/tweet?text=Hello%20world">
+Tweet</a> 
 
 
   <script>
@@ -54,7 +55,8 @@
 
         var quote = "",
             author = "",
-            message = "";
+            message = "",
+            tweetMessage = "";
 
         // random quote function/plugin
         $.fn.randomQuoteGenerator = function(quotesCatalog) {
@@ -76,13 +78,21 @@
                     "<h3>" + message.author + "</h3>" +
                     "<blockquote>" + message.quote + "</blockquote>"
                   );
+              tweetMessage = message.quote.replace(/ /g, '%20');
+              tweetMessage = message.quote.replace(/;/g, ',');
+              tweetMessage = "https://twitter.com/intent/tweet?text=" + tweetMessage + " --" + message.author.replace(/ /g, '%20');
             }
           })
         })(jQuery);
         $.fillInQuoteAndAuthor();
         
-        $("button").click(function(){
-          $.fillInQuoteAndAuthor()
+        $("#quoteButton").click(function(){
+          $.fillInQuoteAndAuthor();
+        });
+
+        $("#tweetButton").click(function(){
+          console.log(tweetMessage);
+          window.open(tweetMessage, "_blank");
         });
 
 
