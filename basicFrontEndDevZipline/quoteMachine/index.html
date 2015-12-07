@@ -17,9 +17,6 @@
   <div id="quote"></div>
   <button class="btn btn-success" id="quoteButton">New Quote</button> 
   <button class="btn btn-primary tweet" id="tweetButton">Tweet</button>
-  <a class="twitter-share-button"
-  href="https://twitter.com/intent/tweet?text=Hello%20world">
-Tweet</a> 
 
 
   <script>
@@ -84,6 +81,8 @@ Tweet</a>
             }
           })
         })(jQuery);
+
+        // Generate quote on page load
         $.fillInQuoteAndAuthor();
         
         $("#quoteButton").click(function(){
@@ -91,12 +90,9 @@ Tweet</a>
         });
 
         $("#tweetButton").click(function(){
-          console.log(tweetMessage);
+          // console.log(tweetMessage);
           window.open(tweetMessage, "_blank");
         });
-
-
-
       });
     }());
   </script>

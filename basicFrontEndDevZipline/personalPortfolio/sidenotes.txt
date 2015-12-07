@@ -1,0 +1,2 @@
+http://www.sitepoint.com/scroll-based-animations-jquery-css3/
+google animate text with scrolling
