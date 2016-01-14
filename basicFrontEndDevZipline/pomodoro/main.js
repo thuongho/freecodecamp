@@ -3,6 +3,9 @@
   $(document).ready(function(){
 
     var $countDown = $("#countDown");
+    var $clock = $('#clock');
+    var $clockName = $clock.find('h2');
+    var breakTimeValue;
 
     $(".timer button").on("click", function() {
 
@@ -11,10 +14,8 @@
           $targetInput = $(this)[0].parentNode.children[2],
           $targetParentID = $(this)[0].parentNode.id;
 
-      var breakTimeValue;
-
-      var sessionTime = parseInt($targetInput.value, 10),
-          breakTime = parseInt();
+      var sessionTime = parseInt($targetInput.value, 10);
+          // breakTime = parseInt();
 
       if ($valueOfButton === "+") {
         // 25 min max
@@ -30,13 +31,14 @@
       
       // Update the input value with button click
       $targetInput.value = sessionTime;
-      console.log("$this: " + $(this));
-      console.log("$targetInput: " + $targetInput);
-      console.log("sessionTime: " + sessionTime);
+      // console.log($clock);
+      // console.log("$this: " + $(this));
+      // console.log("$targetInput: " + $targetInput);
+      // console.log("sessionTime: " + sessionTime);
 
-      console.log("$targetParentID: " + $targetParentID);
-      console.log("$countDown: " + $countDown);
-      console.log("breakValue: " + breakTimeValue);
+      // console.log("$targetParentID: " + $targetParentID);
+      // console.log("$countDown: " + $countDown);
+      // console.log("breakValue: " + breakTimeValue);
 
       if ($targetParentID === "session") {
         $countDown.text(sessionTime);
@@ -73,8 +75,18 @@
           // when minutes go below zero
           if (timerMinutes < 00) {
             breakTimeValue = $("#break").find('input').val();
-            console.log(breakTimeValue);
-            timerMinutes = breakTimeValue;
+            // console.log(breakTimeValue);
+
+            // change Clock name and change minutes value
+            if ($clock.hasClass('breakTime')) {
+              $clockName.text('Session Time');
+              timerMinutes = $('#session').find('input').val();
+            } else {
+              $clockName.text('Break Time');
+              timerMinutes = $("#break").find('input').val();
+            }
+            $clock.toggleClass('breakTime');
+            timerSeconds = 00;
           }
 
           $countDown.text(padWithZero(timerMinutes) + ":" + padWithZero(timerSeconds));
@@ -100,8 +112,9 @@
       $this = $(this);
       $this.toggleClass("startTimer");
       var className = "startTimer";
+      timerCountDown(className);
       if ($this.hasClass("startTimer")) {
-        timerCountDown(className);
+        
         console.log('yeesh');
       } else {
         console.log("yaaay");
