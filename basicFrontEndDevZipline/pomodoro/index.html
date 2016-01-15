@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <!-- bootstrap css -->
-  <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.3/animate.min.css">
 
   <style>
@@ -36,7 +36,7 @@
 
   <!-- javascript -->
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <script src="main.js"></script>
 
 
@@ -73,7 +73,8 @@
         <div class="timer form-inline" id="break">
           <h3>Break Length</h3>
           <button class="btn btn-success" value="-">-</button>
-          <input type="text" placeholder="5" class="form-control" value="5" maxlength="2" size="2">
+          <input type="text" placeholder="2" class="form-control" value="2" maxlength="2" size="2">
+          <!-- <input type="text" placeholder="5" class="form-control" value="5" maxlength="2" size="2"> -->
           <button class="btn btn-info" value="+">+</button>
         </div>
       </div>
@@ -81,7 +82,8 @@
         <div class="timer form-inline" id="session">
           <h3>Session Length</h3>
           <button class="btn btn-success" value="-">-</button>
-          <input type="text" placeholder="25" class="form-control" value="25" maxlength="2" size="2">
+          <input type="text" placeholder="2" class="form-control" value="2" maxlength="2" size="2">
+          <!-- <input type="text" placeholder="25" class="form-control" value="25" maxlength="2" size="2"> -->
           <button class="btn btn-info" value="+">+</button>
         </div>
       </div>
@@ -89,15 +91,13 @@
 
     <div id="clock" class="">
       <h2>Session</h2>
-      <div id="countDown">25</div>
+      <div id="countDown">
+        <p>2</p>
+      </div>
+      <!-- <div id="countDown">25</div> -->
       <div id="filler"></div>
     </div>
   </div>
-
-
-  <script>
-  
-  </script>
   
 </body>
 </html>
