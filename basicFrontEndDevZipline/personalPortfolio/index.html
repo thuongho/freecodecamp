@@ -7,6 +7,11 @@
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.3/animate.min.css">
   <link rel="stylesheet" href="main.css">
 
+  <!-- icons from foundation -->
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.ttf">
+  <!-- fcc icon from fontastic -->
+  <link href="https://file.myfontastic.com/Py9RXv5ftJmYUJJGaS34rf/icons.css" rel="stylesheet">
+
   <!-- javascript -->
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
@@ -17,67 +22,82 @@
 </head>
 <body>
 
-  <div class='container-fluid'>
+<div class='container-fluid'>
 
-    <!-- navbar --> 
-    <div class="row">
-      <div class="col-md-12">
-        <nav class="navbar navbar-default" role="navigation">
-          <div class="col-md-12">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="#">Thuong Ho</a>
-            </div>
-            <ul class="nav navbar-nav navbar-right">
-              <li>
-                <a href="#">Home</a>
-              </li>
-              <li>
-                <a href="#about">About</a>
-              </li>
-              <li>
-                <a href="#">Porfolio</a>
-              </li>
-              <li>
-                <a href="#">Link</a>
-              </li>
-            </ul>
-          </div>
-        </nav>
+    <!-- 
+    =================
+    navbar 
+    =================
+    --> 
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-links" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand purple" href="#">Thuong Ho</a>
       </div>
-    </div>
+      <!-- collapse section -->
+      <div class="collapse navbar-collapse" id="nav-links">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="active">
+            <a href="#" class="black">Home</a>
+          </li>
+          <li>
+            <a href="#about" class="underline_right_to_left">About</a>
+          </li>
+          <li>
+            <a href="#portfolio" class="underline_from_center">Porfolio</a>
+          </li>
+          <li>
+            <a href="#links" class="underline_left_to_right">Links</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- row end -->
 
-  <!-- Section 1: Cover -->
-  <section id="cover" data-speed="6" data-type="background">
-    <div class="container">
-      <h2>Lucid Dreamz</h2>
-      <p>
-        An unlimited space to explore the depths of your <a href='http://freecodecamp.com/' target='_blank'>imagination</a>
-      </p>
-      <hr>
-      <div class="center">
-      <button class="btn btn-default">Twitter</button>
-      <button class="btn btn-default">Github</button>
-      <button class="btn btn-default">LinkedIn</button>
-      <button class="btn btn-default">freeCodeCamp</button>
+
+  <!-- 
+  =================
+  Section 1: Cover 
+  =================
+  -->
+  
+    <header class="container" id="cover">
+      <div class="row">
+        <div class="col-md-12">
+        <section  data-speed="6" data-type="background">
+          <h2>Welcome to Lucid Dreamz</h2>
+          <p>
+            An unlimited space to explore the depths of my <a href='http://freecodecamp.com/' target='_blank'>imagination</a>
+          </p>
+          <hr>
+          <div class="center">
+          <button class="btn"><span class="fi-social-twitter"></span>Twitter</button>
+          <button class="btn"><span class="fi-social-github"></span>Github</button>
+          <button class="btn"><span class="fi-social-linkedin"></span>LinkedIn</button>
+          <button class="btn fcc"><span class="icon-fcc-logo-cp"></span>FreeCodeCamp</button>
+          </section>  
+        </div>
       </div>
-      <div id="clouds" data-speed="12" data-type="background"><img src="cloudy.png" style="width:100%" alt="clouds"></div>
-    </div>
-  </section>  
+    </header>
+  
   <!-- End of Section 1 -->
 
-  <section class="fillIn" data-type="background">
-    <div id="clouds"><img src="cloudy.png" style="width:100%" alt="clouds"></div>
+  <section class="fill-in" data-type="background">
+    <figure id="clouds"><img src="images/cloudy.png" style="width:100%" alt="clouds"></figure>
 
     hello world
   </section>
 
-  <!-- Section 2: About -->
+  <!-- 
+  =================
+  Section 2: About 
+  =================
+  -->
   <section id="about" data-speed="2" data-type="background">
     <div class="container">
       <div class="row">
@@ -98,7 +118,11 @@
     hello world
   </section>
 
-  <!-- Section 3: Portfolio -->
+  <!-- 
+  =================
+  Section 3: Portfolio 
+  =================
+  -->
   <section id="portfolio" data-speed="2" data-type="background">
     <div class="container">
       <div class="row" id="portfolio">
@@ -160,8 +184,12 @@
     </div>
   </section>
 
-
-  <div class='jumbotron'>
+  <!-- 
+  =================
+  Footer 
+  =================
+  -->
+  <footer class='jumbotron'>
     <h2 class='text-center'>Contact me</h2>
     <div class='row'>
       <div class='col-md-3'>
@@ -177,7 +205,7 @@
         <button class='btn btn-block' href='#' target='_blank'>Free Code Camp</button>
       </div>
     </div>
-  </div>
+  </footer>
 </div>
   
 </body>
