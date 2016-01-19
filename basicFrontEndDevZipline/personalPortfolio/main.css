@@ -159,7 +159,7 @@ div[class^="curve-"] {
   top: 1rem;
   right: 1rem;
   /* transform-origin: top left default 50 50*/
-  transform-origin: 0% 100%;
+  transform-origin: -20% 120%;
 }
 .curve-left-top {
   border-top: 0.5rem solid #99ffff;
@@ -183,7 +183,7 @@ div[class^="curve-"] {
   border-bottom-left-radius: 200%;
   bottom: 1rem;
   left: 1rem;
-  transform-origin: 100% 0%;
+  transform-origin: 120% -20%;
 }
 .center-circle {
   width: 1.5rem;
@@ -279,15 +279,16 @@ button span {
 .fi-social-twitter:before { content: "\f1e4"; }
 .fi-social-github:before { content: "\f1c9"; }
 .fi-social-linkedin:before { content: "\f1d0"; }
-button.fcc {
+button.fcc i {
   position: relative;
-  padding-left: 21px;
+  font-style: normal;
+  /*padding-left: 21px;*/
 }
 span.icon-fcc-logo-cp:before {
   position: absolute;
-  top: 10px;
-  left: 8px;
-  padding-right: 5px;
+  top: 2px;
+  left: -15px;
+  /*padding-right: 5px;*/
 }
 
 /* Filler */
