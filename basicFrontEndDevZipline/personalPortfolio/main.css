@@ -19,6 +19,7 @@
 }*/
 .container-fluid {
   padding: 0;
+  overflow: hidden;
 }
 
 /* generals */
@@ -35,8 +36,6 @@
 /* Nav bar */
 #nav-links > ul {
   padding-right: 5%;
-  opacity: .8;
-  /*background: black;*/
 }
 nav {
   opacity: 0.8;
@@ -91,24 +90,25 @@ a.underline_from_center:hover::after {
 
 /* Cover Section */
 #cover {
-  background: url('images/cosmic.svg') 0px fixed;
-  /*background: url('images/cosmic.jpg') 0px fixed;*/
+  /*background: url('images/cosmic.svg') 0px fixed;*/
+  background: url('images/cosmic.jpg') 0px fixed;
   background-size: cover;
+  background-color: #9900cc;
   height: auto;
   margin: 0 auto;
   width: 100%;
   /*position: relative;*/
   /*box-shadow: 0 0 50px rgba(0,0,0,0.8);*/
   padding-top: 200px;
-  padding-bottom: 350px;
+  padding-bottom: 250px;
   padding-left: 5%;
   padding-right: 5%;
-  z-index: -5;
+  /*z-index: -5;*/
 }
 
 #cover h2 {
   color: white;
-  text-shadow: .5px .5px .5px gray,
+  text-shadow: 1px 1px 1px black,
                 2px 2px 2px #e5ccff,
                 2px 2px 2px white;
 }
@@ -121,6 +121,25 @@ a.underline_from_center:hover::after {
 #cover p a {
   color: #e5ccff;
   text-shadow: 2px 2px black;
+}
+
+.greeting {
+  position: relative;
+  /*z-index: 1;*/
+}
+.greeting h2, p {
+  z-index: 3;
+  position: relative;
+}
+.fade-bg {
+  position: absolute;
+  background: white;
+  opacity: .4;
+  height: 120%;
+  width: 120%;
+  top: 0;
+  left: -10%;
+  border-radius: 2px;
 }
 
 /* vault */
@@ -255,8 +274,8 @@ button {
 }
 button:hover {
   color: #e5ccff !important;
-  text-shadow: 1px 1px gray;
-  background: white;
+  text-shadow: 1px 1px #000080;
+  background: #fff;
   box-shadow: 2px 2px 2px black;
 }
 button span {
@@ -294,7 +313,10 @@ span.icon-fcc-logo-cp:before {
 /* Filler */
 section.fill-in {
   /*background-color: transparent !important;*/
-  background: url('images/cloudy-bg.png');
+  /*background: url('images/cloudy-bg.png');*/
+  /*background: url('images/cloudy.png');*/
+  /*background: url('images/astro.png');*/
+  background-color: black;
   background-size: cover;
   background-position: right top;
   opacity: 5.0;
@@ -305,21 +327,14 @@ section.fill-in {
 }
 .fill-in > figure > img {
   position: absolute;
-  top: -250%;
+  top: 100%;
+  /*overflow: hidden;*/
 }
 .normal {
   z-index: 2;
 }
-.flip {
-  top: -190% !important;
-  z-index: 1;
-  transform: scaleX(-1);
-}
-#clouds {
-  /*background-image: url("cloudy.jpg");*/
-  width: 100%;
-  z-index: 5;
-}
+
+
 
 /* About Section */
 #about {
@@ -341,16 +356,35 @@ section.fill-in {
   margin: 0 auto;
   width: 100%;
   position: relative;
-  /*box-shadow: 0 0 50px rgba(0,0,0,0.8);*/
+  box-shadow: 0 0 50px rgba(0,0,0,0.8);
   padding-top: 100px;
-  padding-bottom: 100px;
+
   z-index: 3;
 }
 #about h2 {
   color: white;
   text-shadow: 2px 2px black;
 }
-
+.bio {
+  height: 100%;
+}
+.fix-me {
+  height: 150px;
+  background-color: black;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+/* fill in after bio */
+div.fill-in {
+  position: relative;
+}
+.fill-in-bg {
+  position: absolute;
+  height: 50px;
+  background-color: black;
+  opacity: .4;
+}
 
 /* Porfolio Section */
 #portfolio {
