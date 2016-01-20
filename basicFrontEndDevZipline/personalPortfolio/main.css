@@ -32,6 +32,9 @@
 .purple:hover {
   color: #99ffff !important;
 }
+p {
+  letter-spacing: 1.2px;
+}
 
 /* Nav bar */
 #nav-links > ul {

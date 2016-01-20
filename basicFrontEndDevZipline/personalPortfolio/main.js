@@ -50,8 +50,11 @@
     var $vault = $('.vault');
 
     $('.vault').on('click', function() {
-      $('#cover').css('background-image', 'none');
-      $('#cover').css('background-image', 'url(images/cosmic.jpg');
+      // $('#cover').css('background-image', 'none');
+      $('#cover').fadeOut("slow",function() {
+        $(this).fadeIn().css('background-image', 'url(images/cosmic.jpg')
+      });
+        // $('#cover').animate({'background': "url('images/cosmic.jpg')"}, 1000);
         $('#cover').css('background-position', 'fixed');
     });
 
