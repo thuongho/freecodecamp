@@ -23,11 +23,12 @@
 
     function hideOrShowNavbar() {
       var scrollPosition = $(this).scrollTop();
-      console.log('lastST' + lastScrollTop);
-      console.log('scrollP' + scrollPosition);
-      console.log('navbarH' + navbarHeight);
-      console.log('winH' + $(window).height());
-      console.log('docH' + $(document).height());
+      // ******** Stats ********
+      // console.log('lastST' + lastScrollTop);
+      // console.log('scrollP' + scrollPosition);
+      // console.log('navbarH' + navbarHeight);
+      // console.log('winH' + $(window).height());
+      // console.log('docH' + $(document).height());
 
       if (Math.abs(lastScrollTop - scrollPosition) <= scrollTrigger) {
         return;
@@ -37,15 +38,22 @@
       if ((scrollPosition > lastScrollTop) && (scrollPosition > navbarHeight)) {
         // hide navbar
         $('nav').addClass('nav-up');
-        console.log('nav-up');
       } else {
         if ((scrollPosition + $(window).height()) < $(document).height()) {
           $('nav').removeClass('nav-up');
-          console.log('nav-down');
         }
       }
       lastScrollTop = scrollPosition;
     }
+
+    // unlock the vault
+    var $vault = $('.vault');
+
+    $('.vault').on('click', function() {
+      $('#cover').css('background-image', 'none');
+      $('#cover').css('background-image', 'url(images/cosmic.jpg');
+        $('#cover').css('background-position', 'fixed');
+    });
 
     // document.createElement('section');
     // // cache the window object
