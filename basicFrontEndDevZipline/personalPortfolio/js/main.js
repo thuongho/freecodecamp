@@ -1,8 +1,17 @@
 (function(){
   $(document).ready(function(){
 
-    // hide navbar 
+    // unlock the vault
+    $('.vault').on('click', function() {
+      $('#cover').css('background-image', 'url(https://docs.google.com/uc?id=0B46iINhPgLTtR0ItTW0wMklBOHM)').fadeOut("slow",function() {
+        $(this).fadeIn();
+      });
+      $('#cover').css('background-position', 'fixed');
+    });
+
+    // ********* hide navbar *********
     // credits to Marius Craciunoiu
+    // *******************************
     var scrolling;
     var lastScrollTop = 0,
         scrollTrigger = 5,
@@ -24,11 +33,12 @@
     function hideOrShowNavbar() {
       var scrollPosition = $(this).scrollTop();
       // ******** Stats ********
-      // console.log('lastST' + lastScrollTop);
-      // console.log('scrollP' + scrollPosition);
-      // console.log('navbarH' + navbarHeight);
-      // console.log('winH' + $(window).height());
-      // console.log('docH' + $(document).height());
+      console.log('lastST' + lastScrollTop);
+      console.log('scrollP' + scrollPosition);
+      console.log('navbarH' + navbarHeight);
+      console.log('winH' + $(window).height());
+      console.log('docH' + $(document).height());
+      console.log('----------------------------');
 
       if (Math.abs(lastScrollTop - scrollPosition) <= scrollTrigger) {
         return;
@@ -45,39 +55,30 @@
       }
       lastScrollTop = scrollPosition;
     }
+    // ********* end hide navbar *********
 
-    // unlock the vault
-    var $vault = $('.vault');
+    // ********* make navbar links active *********
+    // SP 0 Home 868 About 1311 Portfolio 2161 Links
+    // var $home = $('#cover'),
+    //     $about = $('#about'),
+    //     $portfolio = $('#portfolio'),
+    //     $links = $('#links');
+    // var lastActiveClass = $home,
+    //     currentClass;
 
-    $('.vault').on('click', function() {
-      // $('#cover').css('background-image', 'none');
-      $('#cover').fadeOut("slow",function() {
-        $(this).fadeIn().css('background-image', 'url(images/cosmic.jpg')
-      });
-        // $('#cover').animate({'background': "url('images/cosmic.jpg')"}, 1000);
-        $('#cover').css('background-position', 'fixed');
-    });
+    // // Home
+    // if (scrollPosition < 868) {
+    //   currentClass = $home;
+    // } else if ((scrollPosition >= 868) && (scrollPosition < 1311)) {
+    //   currentClass = $about;
+    // } else if ((scrollPosition >= 1311) && (scrollPosition < 2161))
 
-    // document.createElement('section');
-    // // cache the window object
-    // $window = $(window);
-
-    // $('section[data-type="background"]').each(function(){
-    //   // declare the variable to affect the defined data-type
-    //   var $scroll = $(this);
-
-    //   $(window).scroll(function(){
-    //     // negative values because scrolling upwards
-    //     // scrollTop gets the vertical position of the scrollbar
-    //     var yPos = -($window.scrollTop() / $scroll.data('speed'));
-
-    //     // background position
-    //     var coords = '50%' + yPos + 'px';
-
-    //     // move the background
-    //     $scroll.css({ backgroundPosition: coords });
-      
-    //   }); // end window scroll
-    // });  // end section function
+    // function checkLastActiveClass(activeClass) {
+    //   if (activeClass !== lastActiveClass) {
+    //     lastActiveClass = activeClass;
+    //   }
+    //   return lastActiveClass;
+    // }
+    // ********* end navbar links active *********
   });  // end doc ready
 }());  // end iffy
