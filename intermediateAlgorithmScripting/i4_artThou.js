@@ -81,8 +81,8 @@ function where(collection, source) {
   var arr = [];
   var addToArr = false;
   for (var i =0; i<collection.length; i++) {
-    for (var name in source) {
-      if (!collection[i].hasOwnProperty(name) || collection[i][name] !== source[name]) {
+    for (var key in source) {
+      if (!collection[i].hasOwnProperty(key) || collection[i][key] !== source[key]) {
         addToArr = false;
         break;
       }
