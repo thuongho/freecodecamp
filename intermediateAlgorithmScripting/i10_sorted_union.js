@@ -1,18 +1,24 @@
 function unite(arr1, arr2, arr3) {
   var args = Array.prototype.slice.call(arguments);
-  var c;
+  var concatArgs = [];
+  
+  concatArgs = args.reduce(function(a,b) {
+    return a.concat(b);
+  });
 
-  console.log(args);
-  args.reduce(function(previousValue, currentValue, currentIndex, array) {
-     c += previousValue + currentValue;
-     console.log('c',c);
-  }, args[0]);
+  var targetIndex = 0;
+  var target;
+
+  while (targetIndex <= concatArgs.length){
+    target = concatArgs[targetIndex];
+    for (var i = targetIndex+1; i < concatArgs.length; i++) {
+      if (concatArgs[i] === target) {
+        concatArgs.splice(i, 1);
+      }
+    }
+    targetIndex++;
+  }
+  return concatArgs;
 }
 
 unite([1, 3, 2], [5, 2, 1, 4], [2, 1]);
-
-
-[0, 1, 2, 3, 4].reduce(function(previousValue, currentValue, currentIndex, array) {
-  return previousValue + currentValue;
-}, 10);
-
