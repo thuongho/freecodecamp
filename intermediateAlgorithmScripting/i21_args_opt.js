@@ -1,13 +1,16 @@
 function add() {
   var sum = 0;
 
-  countingNumbers(arguments[0]);
-
-  if (arguments.length > 1) {
-    return countingNumbers(arguments[1]);
+  if (typeof arguments[0] !== 'number') {
+    return undefined;
   } else {
-    console.log('under 1');
-    return countingNumbers;    
+    countingNumbers(arguments[0]);
+    if (arguments.length > 1) {
+      return countingNumbers(arguments[1]);
+    } else {
+      console.log('under 1');
+      return countingNumbers;    
+    }
   }
 
   function countingNumbers(arg){
@@ -16,6 +19,7 @@ function add() {
       console.log('sum', sum);
       return sum;
     } else {
+      console.log(typeof arg);
       return undefined;
     }
   }
