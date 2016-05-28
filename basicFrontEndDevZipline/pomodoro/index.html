@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <!-- bootstrap css -->
-  <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.3/animate.min.css">
 
   <style>
@@ -36,7 +36,8 @@
 
   <!-- javascript -->
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="main.js"></script>
 
 
 
@@ -72,7 +73,8 @@
         <div class="timer form-inline" id="break">
           <h3>Break Length</h3>
           <button class="btn btn-success" value="-">-</button>
-          <input type="text" placeholder="5" class="form-control" value="5" maxlength="2" size="2">
+          <input type="text" placeholder="2" class="form-control" value="2" maxlength="2" size="2">
+          <!-- <input type="text" placeholder="5" class="form-control" value="5" maxlength="2" size="2"> -->
           <button class="btn btn-info" value="+">+</button>
         </div>
       </div>
@@ -80,111 +82,22 @@
         <div class="timer form-inline" id="session">
           <h3>Session Length</h3>
           <button class="btn btn-success" value="-">-</button>
-          <input type="text" placeholder="25" class="form-control" value="25" maxlength="2" size="2">
+          <input type="text" placeholder="2" class="form-control" value="2" maxlength="2" size="2">
+          <!-- <input type="text" placeholder="25" class="form-control" value="25" maxlength="2" size="2"> -->
           <button class="btn btn-info" value="+">+</button>
         </div>
       </div>
     </div>
 
-    <div id="clock">
+    <div id="clock" class="">
       <h2>Session</h2>
-      <div id="countDown">25</div>
+      <div id="countDown">
+        <p>2</p>
+      </div>
+      <!-- <div id="countDown">25</div> -->
       <div id="filler"></div>
     </div>
   </div>
-
-
-  <script>
-  (function(){
-
-    $(document).ready(function(){
-
-      var $countDown = $("#countDown");
-
-      $(".timer button").on("click", function() {
-
-        // update input value depending on + or -
-        var $valueOfButton = $(this)[0].value,
-            $targetInput = $(this)[0].parentNode.children[2],
-            $targetParentID = $(this)[0].parentNode.id,
-            countTime = parseInt($targetInput.value, 10);
-
-        if ($valueOfButton === "+") {
-          // 25 min max
-          if (countTime < 25) {
-            countTime += 1;
-          }
-        } else {
-          // 1 min min
-          if (countTime > 1) {
-            countTime -= 1;
-          }
-        }
-        
-        // Update the input value with button click
-        $targetInput.value = countTime;
-        // console.log($(this));
-        // console.log($target);
-        // console.log(countTime);
-
-        // console.log($targetParentID);
-        // console.log($countDown);
-
-        if ($targetParentID === "session") {
-          $countDown.text(countTime);
-        }
-      });
-
-
-      // timer countdown
-      var timerCountDown = function(class) {
-        // add css for toggling start/pause
-        if (class === "startTimer") { 
-
-          // display time on click
-          var timerMinutes = parseInt($countDown.text());
-          var timerSeconds = 00;
-          $countDown.text(padWithZero(timerMinutes) + ":" + padWithZero(timerSeconds));
-          
-          if (timerMinutes > 0) {
-            timerMinutes = timerMinutes - 1;
-            timerSeconds = 59;  
-          }
-
-          var secondsCounter = setInterval(function() {
-            // if (timerSeconds === 00) { clearInterval(secondsCounter);}
-            $countDown.text(padWithZero(timerMinutes) + ":" + padWithZero(timerSeconds));
-            timerSeconds -= 1;
-          },1000);
-
-        } else {
-          clearInterval(secondsCounter);
-        }
-
-      }  // end of timer countdown
-
-      function padWithZero(num) {
-        num = num.toString();
-        if (num.length < 2) {
-          num = "0" + num;
-        }
-        return num;
-      }
-      
-
-      $("#clock").on("click", function() {
-        $this = $(this);
-        $this.toggleClass("startTimer");
-        var className = "startTimer"
-        if ($this.hasClass("startTimer")) {
-          timerCountDown(className);
-        } else {
-          console.log("yaaay");
-        }
-      });
-    });
-  })();
-  </script>
   
 </body>
 </html>
